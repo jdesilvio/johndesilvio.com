@@ -39,6 +39,11 @@ body {
 #right {
     background: #001590;
     float: right;
+    /*background: asset-data-url('static/pics/headshot1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
 }
 
 #links {
@@ -71,7 +76,7 @@ ul {
 
 li { display: inline-block;}
 
-a{ color: inherit;}
+a { color: inherit;}
 
 .bar {
     position: absolute;
@@ -87,10 +92,15 @@ a{ color: inherit;}
 }
 
 .bar:hover {
+    z-index: 1;
     height: 24px;
     background: #FFA500;
 }
 
+#left > ul > li > a > p {
+    z-index: 2;
+    position: absolute;
+}
 
 a {
     font-family: "gibsonregular", "gibsonsemibold", "Helvetica Neue", Helvetica, Arial, sans-serif;
