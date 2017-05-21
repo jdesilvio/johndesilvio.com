@@ -1,13 +1,7 @@
-FROM ubuntu:latest
+FROM python:3.6.1-alpine
 
 MAINTAINER John DeSilvio "john.desilvio@yahoo.com"
 
-RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+RUN pip install flask==0.12.2
 
-COPY . /app
-WORKDIR /app
-
-RUN pip install flask
-
-ENV FLASK_APP ./app.py
+ENV FLASK_APP /usr/src/app/app.py
