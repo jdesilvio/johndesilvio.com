@@ -5,7 +5,14 @@ web:
     - "5000"
   volumes:
     - ./web:/usr/src/app
-  command: /usr/local/bin/flask run --host=0.0.0.0 --port 5000 --debugger
+  command: >
+    bash -c "uwsgi --http :5000 \
+                   --chdir /usr/src/app \
+                   --wsgi-file run.py \
+                   --callable app \
+                   --master \
+                   --processes 4 \
+                   --threads 2"
 
 nginx:
   restart: always
