@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name localhost;
+    server_name johndesilvio.com www.johndesilvio.com;
     charset utf-8;
 
     location /static {
