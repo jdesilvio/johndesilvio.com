@@ -47,13 +47,23 @@ body {
 
 @media screen and (max-width: 1168px) {
   #right {
-    background: none;
+      display: none;
   }
+  #left {
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+    li {
+        display: grid;
+    }
 }
 
 #links {
     position: absolute;
     bottom: 72px;
+    width: 100%;
     text-decoration: none;
     list-style: none;
 }
