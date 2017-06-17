@@ -23,7 +23,7 @@ body {
     "gibsonregular", "gibsonsemibold",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #282828;
-  background: #FFFAF0;
+  background: rgb(255,250,240);
 }
 
 .container {
@@ -42,7 +42,7 @@ body {
 
 #left {
   float: left;
-  background: #FFFAF0;
+  background: rgb(255,250,240);
 }
 
 #right {
@@ -72,7 +72,7 @@ body {
   left: 72px;
   bottom: 0;
   margin: auto;
-  color: #FFFAF0;
+  color: rgb(255,250,240);
 }
 
 #names {
@@ -106,22 +106,57 @@ li {
   height: 4px;
   width: 100%;
   background: rgb(201, 181,3);
-  -webkit-transition: all 0.32s cubic-bezier(.48, 0, .16, 1);
-  -moz-transition: all 0.32s cubic-bezier(.48, 0, .16, 1);
-  -ms-transition: all 0.32s cubic-bezier(.48, 0, .16, 1);
-  -o-transition: all 0.32s cubic-bezier(.48, 0, .16, 1);
-  transition: all 0.32s cubic-bezier(.48, 0, .16, 1);
+  -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
 }
 
-.bar:hover {
+.inner-bar {
+    position: absolute;
+    bottom: 4px;
+    height: 0px;
+    width: 120px;
+    margin: 0 4px 0 4px;
+    background: rgb(255,250,240);
+    -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+}
+
+li:hover .bar {
   z-index: 1;
-  height: 24px;
+  height: 32px;
   background: rgb(201, 181,3);
 }
 
-#left > ul > li > a > p {
+li:hover .inner-bar {
   z-index: 2;
+    height: 24px;
+    background: rgb(255,250,240);
+}
+
+.link-text {
+  z-index: 3;
   position: absolute;
+  padding: 0px;
+  -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+}
+
+li:hover .link-text {
+    padding: 8px;
+    -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+    transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
 }
 
 #left > ul > li > a {
