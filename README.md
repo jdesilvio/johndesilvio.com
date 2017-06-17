@@ -7,6 +7,7 @@
 * uWSGI
 * NGINX
 * Docker
+* Hosted on **[Linode](https://www.linode.com)**
 
 ---
 
