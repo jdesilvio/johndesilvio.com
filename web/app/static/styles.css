@@ -56,13 +56,22 @@ body {
   background-size: cover;
 }
 
-@media screen and (max-width: 1168px) {
-  #right {
+@media screen and (min-width: 1168px) {
+  svg {
     display: none;
   }
-  #left {
-    width: 100%;
-  }
+}
+
+#sketch {
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 400px;
+  left: auto;
+  right: 16px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 #title {
@@ -73,6 +82,22 @@ body {
   bottom: 0;
   margin: auto;
   color: rgb(255,250,240);
+}
+
+@media screen and (max-width: 1168px) {
+  #right {
+    background: none;
+    position: absolute;
+    width: 100%;
+  }
+  #left {
+    width: 100%;
+  }
+  #title {
+    right: 134px;
+    left: auto;
+    color: #282828;
+  }
 }
 
 #names {
