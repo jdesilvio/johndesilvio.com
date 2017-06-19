@@ -20,7 +20,6 @@ body {
   height: 100%;
   overflow-x: hidden;
   font-family:
-    "gibsonregular", "gibsonsemibold",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #282828;
   background: rgb(255,250,240);
@@ -48,18 +47,12 @@ body {
 #right {
   float: right;
   background:
-    linear-gradient(to bottom, rgba(2,8,64,0.75), rgba(2,8,64,0.9)),
+    linear-gradient(to bottom, rgba(2, 8, 64, 0.75), rgba(2, 8, 64, 0.9)),
     url(pics/headshot1.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-@media screen and (min-width: 1168px) {
-  svg {
-    display: none;
-  }
 }
 
 #sketch {
@@ -68,7 +61,7 @@ body {
   width: 400px;
   height: 400px;
   left: auto;
-  right: 16px;
+  right: 34px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -82,22 +75,6 @@ body {
   bottom: 0;
   margin: auto;
   color: rgb(255,250,240);
-}
-
-@media screen and (max-width: 1168px) {
-  #right {
-    background: none;
-    position: absolute;
-    width: 100%;
-  }
-  #left {
-    width: 100%;
-  }
-  #title {
-    right: 134px;
-    left: auto;
-    color: #282828;
-  }
 }
 
 #names {
@@ -119,37 +96,19 @@ li {
   height: 34px;
 }
 
-@media screen and (max-width: 425px) {
-  li {
-    display: grid;
-  }
-}
-
 .bar {
-  position: absolute;
   bottom: 0;
   height: 4px;
   width: 100%;
   background: rgb(201, 181,3);
-  -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-  -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-  -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-  -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-  transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
 }
 
 .inner-bar {
-    position: absolute;
-    bottom: 4px;
-    height: 0px;
-    width: 120px;
-    margin: 0 4px 0 4px;
-    background: rgb(255,250,240);
-    -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  bottom: 4px;
+  height: 0px;
+  width: 120px;
+  margin: 0 4px 0 4px;
+  background: rgb(255,250,240);
 }
 
 li:hover .bar {
@@ -166,8 +125,11 @@ li:hover .inner-bar {
 
 .link-text {
   z-index: 3;
-  position: absolute;
   padding: 0px;
+}
+
+li:hover .link-text {
+  padding: 8px;
   -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
   -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
   -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
@@ -175,13 +137,13 @@ li:hover .inner-bar {
   transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
 }
 
-li:hover .link-text {
-    padding: 8px;
-    -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
-    transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+.bar, .inner-bar, .link-text {
+  position: absolute;
+  -webkit-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -moz-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -ms-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  -o-transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
+  transition: all 0.64s cubic-bezier(.48, 0, .16, 1);
 }
 
 #left > ul > li > a {
@@ -189,11 +151,67 @@ li:hover .link-text {
   display: block;
   width: 100%;
   height: 100%;
-  font-family:
-    "gibsonregular", "gibsonsemibold",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
   color: inherit;
+}
+
+@media screen and (min-width: 1024px) {
+  svg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #right {
+    background: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-align: -webkit-center;
+  }
+  #left {
+    width: 100%;
+  }
+  #title {
+    right: 0;
+    left: auto;
+    padding: 0 72px;
+    color: #282828;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sketch {
+    text-align: center;
+    text-align: -webkit-center;
+  }
+  li {
+    width: 88px;
+  }
+  .inner-bar {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  li {
+    display: grid;
+    margin: 8px 24px 0 0;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape){
+  #left {
+    background: url(pics/headshot2.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #right, #sketch, #names, #links {
+      display: none;
+  }
 }
