@@ -47,7 +47,7 @@ body {
 #right {
   float: right;
   background:
-    linear-gradient(to bottom, rgba(2, 8, 64, 0.75), rgba(2, 8, 64, 0.9)),
+    linear-gradient(to bottom, rgba(0,55,164, 0.75), rgba(0, 55, 164, 0.9)),
     url(pics/headshot1.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -100,7 +100,7 @@ li {
   bottom: 0;
   height: 4px;
   width: 100%;
-  background: rgb(201, 181,3);
+  background: rgb(240,160,0);
 }
 
 .inner-bar {
@@ -114,7 +114,7 @@ li {
 li:hover .bar {
   z-index: 1;
   height: 32px;
-  background: rgb(201, 181,3);
+  background: rgb(240,160,0);
 }
 
 li:hover .inner-bar {
@@ -203,7 +203,7 @@ li:hover .link-text {
   }
 }
 
-@media screen and (max-width: 768px) and (orientation: landscape){
+@media screen and (max-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape){
   #left {
     background: url(pics/headshot2.jpg) no-repeat;
     -webkit-background-size: cover;
