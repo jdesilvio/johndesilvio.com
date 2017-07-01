@@ -119,8 +119,8 @@ li:hover .bar {
 
 li:hover .inner-bar {
   z-index: 2;
-    height: 24px;
-    background: rgb(255,250,240);
+  height: 24px;
+  background: rgb(255,250,240);
 }
 
 .link-text {
@@ -157,13 +157,13 @@ li:hover .link-text {
   color: inherit;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1224px) {
   svg {
     display: none;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1224px) {
   #right {
     background: none;
     position: absolute;
