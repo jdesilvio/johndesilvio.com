@@ -1,4 +1,4 @@
-FROM python:3.6.1-alpine
+FROM python:3.7-alpine3.9
 
 MAINTAINER John DeSilvio "john.desilvio@yahoo.com"
 

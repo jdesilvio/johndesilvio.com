@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   web:
@@ -24,8 +24,13 @@ services:
       - "80:80"
     volumes:
       - /www/static
+      - web:/usr/src/app
       - ./nginx/sites-enabled/jd:/etc/nginx/nginx.conf
-    volumes_from:
-      - web
     links:
       - web:web
+
+volumes:
+  web:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /root/johndesilvio_dot_com/web
