@@ -2,10 +2,29 @@ events { worker_connections 1024; }
 
 http {
     include mime.types;
+
     server {
         listen 80;
+
+        location ^~ /.well-known {
+            allow all;
+            root  /data/letsencrypt/;
+        }
+
+        location / {
+            return 301 https://$host$request_uri;
+        }
+    }
+
+    server {
+        listen 443 default_server;
+
         server_name johndesilvio.com www.johndesilvio.com;
-    
+
+        ssl on;
+        ssl_certificate /etc/letsencrypt/live/johndesilvio.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/johndesilvio.com/privkey.pem;
+
         location /static {
             alias /usr/src/app/app/static;
         }

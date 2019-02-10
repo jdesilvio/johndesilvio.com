@@ -22,10 +22,12 @@ services:
     image: nginx:1.15
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - /www/static
       - web:/usr/src/app
       - ./nginx/sites-enabled/jd:/etc/nginx/nginx.conf
+      - /etc/letsencrypt/:/etc/letsencrypt/
     links:
       - web:web
 
