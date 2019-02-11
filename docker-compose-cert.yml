@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  web:
+    restart: always
+    build: ./web
+    expose:
+      - "5000"
+    volumes:
+      - ./web:/usr/src/app
+    command: >
+      bash -c "uwsgi --socket :5000 \
+                     --chdir /usr/src/app \
+                     --wsgi-file run.py \
+                     --callable app \
+                     --master \
+                     --processes 4 \
+                     --threads 2"
+
+  nginx:
+    restart: always
+    image: nginx:1.15
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /www/static
+      - web:/usr/src/app
+      - ./nginx/sites-enabled/cert:/etc/nginx/nginx.conf
+      - /root/certs-data/:/data/letsencrypt/
+    links:
+      - web:web
+
+volumes:
+  web:
+    driver: local-persist
+    driver_opts:
+      mountpoint: /root/johndesilvio_dot_com/web
