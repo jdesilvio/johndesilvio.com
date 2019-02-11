@@ -2,7 +2,7 @@
 
 ## Built with:
 
-* Python 3.6
+* Python 3.7
 * Flask
 * uWSGI
 * NGINX
@@ -11,10 +11,7 @@
 
 ---
 
-#### Ensure a clean build
+## Deploy
 
-     docker-compose stop && \
-     docker-compose rm -f && \
-     docker-compose pull && \
-     docker-compose build --no-cache && \
-     docker-compose up -d --force-recreate --remove-orphans
+    export CERT_EMAIL=<EMAIL_ADDRESS_FOR_CERTBOT_NOTIFICATIONS>
+    ./deploy.sh
