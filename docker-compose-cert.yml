@@ -26,7 +26,7 @@ services:
     volumes:
       - /www/static
       - web:/usr/src/app
-      - ./nginx/sites-enabled/cert:/etc/nginx/nginx.conf
+      - ./nginx/cert.conf:/etc/nginx/nginx.conf
       - /root/certs-data/:/data/letsencrypt/
     links:
       - web:web
